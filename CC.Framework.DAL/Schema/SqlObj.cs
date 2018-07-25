@@ -1,4 +1,5 @@
-﻿using CC.Public;
+﻿using CC.DataAccess.Extend;
+using CC.Public;
 using System;
 using System.Collections.Generic;
 using System.Linq;

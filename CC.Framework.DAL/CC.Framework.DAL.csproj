@@ -63,8 +63,13 @@
     <Compile Include="DbHelperWrapper.cs" />
     <Compile Include="GlobalIdentity.cs" />
     <Compile Include="Log\CommonDBLog.cs" />
+    <Compile Include="Log\DBLogData.cs" />
+    <Compile Include="Log\LogManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Schema\Column.cs" />
+    <Compile Include="Schema\SchemaManager.cs" />
     <Compile Include="Schema\ShardManager.cs" />
+    <Compile Include="Schema\SqlObj.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

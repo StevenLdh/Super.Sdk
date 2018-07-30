@@ -14,7 +14,7 @@ namespace Super.Sdk
         {
             Task task = new Task();
 
-            var reqid = HttpContext.Current.Items["cc_request_id"];
+            var reqid = HttpContext.Current!=null ?HttpContext.Current.Items["cc_request_id"]:0;
 
             task.task = System.Threading.Tasks.Task.Run(() =>
             {

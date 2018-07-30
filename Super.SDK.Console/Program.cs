@@ -15,7 +15,8 @@ namespace Super.SDK.ConsoleExe
 
             //ViewData();
             //TestTask();
-            new Program().UseTxtLog();
+            //new Program().UseTxtLog();
+            UseCache();
         }
         /// <summary>
         /// 查询数据案例
@@ -52,9 +53,18 @@ namespace Super.SDK.ConsoleExe
             Console.WriteLine(datasourcecombase.Count());
         }
 
-
+        /// <summary>
+        /// 使用文本日志
+        /// </summary>
         public void UseTxtLog() {
             log4net.LogManager.GetLogger(this.GetType()).Error("日志测试文件");
+        }
+        /// <summary>
+        /// 使用缓存技术
+        /// </summary>
+        public static void UseCache() {
+            CacheManager.SetCache("key_20180730", "20180730");
+            Console.WriteLine(CacheManager.GetCache("key_20180730"));
         }
     }
 }

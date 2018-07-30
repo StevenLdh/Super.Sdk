@@ -14,8 +14,8 @@ namespace Super.SDK.ConsoleExe
         {
 
             //ViewData();
-            TestTask();
-
+            //TestTask();
+            new Program().UseTxtLog();
         }
         /// <summary>
         /// 查询数据案例
@@ -36,7 +36,7 @@ namespace Super.SDK.ConsoleExe
                 //1.查询列表
                 UnitsClass.IsSetTimeout();
                 datasourcecombase =
-                 new DALBase("erp").GetDataList(HashObject.CreateWith("profileid", 10004621), "select * from bas_account where profileid=10004621;", SqlType.CmdText);
+                 new DALBase("erp", DBrwType.Write,true).GetDataList(HashObject.CreateWith("profileid", 10004621), "select * from bas_account where profileid=10004621;", SqlType.CmdText);
             });
             tasks.Add(listtask);
 
@@ -50,6 +50,11 @@ namespace Super.SDK.ConsoleExe
             }
 
             Console.WriteLine(datasourcecombase.Count());
+        }
+
+
+        public void UseTxtLog() {
+            log4net.LogManager.GetLogger(this.GetType()).Error("日志测试文件");
         }
     }
 }

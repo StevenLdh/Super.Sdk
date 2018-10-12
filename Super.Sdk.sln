@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Super.SDK.ConsoleExe", "Sup
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Super.Sdk", "Super.Sdk\Super.Sdk.csproj", "{A10A5D13-B1AE-446C-A652-4E6C32C96D2F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Threading.Timer", "Threading.Timer\Threading.Timer.csproj", "{0E000FCB-CDB1-4308-A0A5-DF8F7AB6970F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{A10A5D13-B1AE-446C-A652-4E6C32C96D2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A10A5D13-B1AE-446C-A652-4E6C32C96D2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A10A5D13-B1AE-446C-A652-4E6C32C96D2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E000FCB-CDB1-4308-A0A5-DF8F7AB6970F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E000FCB-CDB1-4308-A0A5-DF8F7AB6970F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E000FCB-CDB1-4308-A0A5-DF8F7AB6970F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E000FCB-CDB1-4308-A0A5-DF8F7AB6970F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

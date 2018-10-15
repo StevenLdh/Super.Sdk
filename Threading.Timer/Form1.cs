@@ -68,7 +68,7 @@ namespace Threading.Timer
         private void btn_Start_Click(object sender, EventArgs e)
         {
             //立即开始计时，时间间隔1000毫秒
-            threadTimer.Change(0, 3000);
+            threadTimer.Change(0, 5000);
         }
 
         /// <summary>
@@ -79,13 +79,17 @@ namespace Threading.Timer
         private void btn_Stop_Click(object sender, EventArgs e)
         {
             //停止计时
-            threadTimer.Change(Timeout.Infinite, 3000);
+            threadTimer.Change(Timeout.Infinite, 5000);
         }
         public static void ViewData()
         {
-            HashObjectList datasourcecombase =
-                new DALBase("erp").GetDataList(HashObject.CreateWith("profileid", 10004621), "select * from bas_account where profileid=10004621;", SqlType.CmdText);
+            string sqlwhere = string.Format(@"update bas_account set ModifyTime=now() where aid=1;");
+            //HashObjectList datasourcecombase =
+            //    new DALBase("erp").GetDataList(HashObject.CreateWith("profileid", 10004621), "select * from bas_account where profileid=10004621;", SqlType.CmdText);
             //Console.WriteLine(datasourcecombase.Count());
+
+            new DALBase("erp").ExecuteNonQuery(HashObject.CreateWith("profileid", 10004621), sqlwhere,SqlType.CmdText);
+
         }
     }
 }

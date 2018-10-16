@@ -15,8 +15,8 @@ namespace Super.SDK.ConsoleExe
 
             //ViewData();
             //TestTask();
-            //new Program().UseTxtLog();
-            UseCache();
+            UseTxtLog();
+            //UseCache();
         }
         /// <summary>
         /// 查询数据案例
@@ -56,8 +56,9 @@ namespace Super.SDK.ConsoleExe
         /// <summary>
         /// 使用文本日志
         /// </summary>
-        public void UseTxtLog() {
-            log4net.LogManager.GetLogger(this.GetType()).Error("日志测试文件");
+        public static void UseTxtLog() {
+            LogTools.SetConfig();
+            LogTools.WriteLog("日志测试文件");
         }
         /// <summary>
         /// 使用缓存技术

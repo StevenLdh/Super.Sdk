@@ -13,10 +13,11 @@ namespace Super.SDK.ConsoleExe
         public static void Main(string[] args)
         {
 
-            //ViewData();
-            //TestTask();
-            UseTxtLog();
-            //UseCache();
+            //ViewData();// 测试操作数据库
+            //TestTask();// 测试多线程
+            //UseTxtLog();// 测试日志
+            //UseCache();// 测试缓存
+            RedisTest.GetRedisData();// 测试redis
         }
         /// <summary>
         /// 查询数据案例

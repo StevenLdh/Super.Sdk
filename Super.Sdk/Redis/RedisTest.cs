@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Super.SDK.ConsoleExe
+namespace Super.Sdk
 {
     public class RedisTest
     {

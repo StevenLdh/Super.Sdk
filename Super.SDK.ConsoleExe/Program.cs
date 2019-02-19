@@ -12,7 +12,6 @@ namespace Super.SDK.ConsoleExe
     {
         public static void Main(string[] args)
         {
-
             //ViewData();// 测试操作数据库
             //TestTask();// 测试多线程
             //UseTxtLog();// 测试日志
@@ -20,9 +19,15 @@ namespace Super.SDK.ConsoleExe
             //RedisTest.GetRedisData();// 测试redis
 
             #region 异步等待特性使用
-            AsyncAwaitMethond();
-            Console.WriteLine("Main Thread!");
-            Console.ReadLine();
+            //AsyncAwaitMethond();
+            //Console.WriteLine("Main Thread!");
+            //Console.ReadLine();
+            #endregion
+            #region 压缩文件和解压
+            //压缩文件
+            //FileZip.CreateFromDirectory(@"D:\testfile", @"D:\testfile.zip");
+            //解压文件
+            //FileZip.ExtractToDirectory(@"D:\testfile.zip", @"D:\testfile");
             #endregion
         }
         #region 查询数据案例

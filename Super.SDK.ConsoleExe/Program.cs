@@ -29,6 +29,9 @@ namespace Super.SDK.ConsoleExe
             //解压文件
             //FileZip.ExtractToDirectory(@"D:\testfile.zip", @"D:\testfile");
             #endregion
+            var curr = DateTime.Now;
+            long millisecond = (long)(DateTime.Parse("2019-03-01").AddHours(curr.Hour).AddMinutes(curr.Minute).AddSeconds(curr.Second) - curr).TotalMilliseconds;
+
         }
         #region 查询数据案例
         /// <summary>

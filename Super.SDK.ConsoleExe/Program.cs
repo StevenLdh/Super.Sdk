@@ -6,13 +6,18 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using WordPressPCL;
+using WordPressPCL.Models;
 namespace Super.SDK.ConsoleExe
 {
     public class Program
     {
+        public const string WordPressUri = "https://school.lk361.com/wp-json/";
+        public const string Username = "lk361";
+        public const string Password = "r6T3puJxiBH!6uPl";
         public static void Main(string[] args)
         {
-            //ViewData();// 测试操作数据库
+            ViewData();// 测试操作数据库
             //TestTask();// 测试多线程
             //UseTxtLog();// 测试日志
             //UseCache();// 测试缓存
@@ -29,9 +34,10 @@ namespace Super.SDK.ConsoleExe
             //解压文件
             //FileZip.ExtractToDirectory(@"D:\testfile.zip", @"D:\testfile");
             #endregion
-            var curr = DateTime.Now;
-            long millisecond = (long)(DateTime.Parse("2019-03-01").AddHours(curr.Hour).AddMinutes(curr.Minute).AddSeconds(curr.Second) - curr).TotalMilliseconds;
+            //var curr = DateTime.Now;
+            //long millisecond = (long)(DateTime.Parse("2019-03-01").AddHours(curr.Hour).AddMinutes(curr.Minute).AddSeconds(curr.Second) - curr).TotalMilliseconds;
 
+           
         }
         #region 查询数据案例
         /// <summary>
@@ -117,5 +123,7 @@ namespace Super.SDK.ConsoleExe
             Console.WriteLine("LogTaskTwo Thread");
         }
         #endregion
+
+       
     }
 }

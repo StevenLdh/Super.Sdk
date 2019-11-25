@@ -17,7 +17,7 @@ namespace Super.SDK.ConsoleExe
         public const string Password = "r6T3puJxiBH!6uPl";
         public static void Main(string[] args)
         {
-            ViewData();// 测试操作数据库
+            //ViewData();// 测试操作数据库
             //TestTask();// 测试多线程
             //UseTxtLog();// 测试日志
             //UseCache();// 测试缓存
@@ -37,7 +37,18 @@ namespace Super.SDK.ConsoleExe
             //var curr = DateTime.Now;
             //long millisecond = (long)(DateTime.Parse("2019-03-01").AddHours(curr.Hour).AddMinutes(curr.Minute).AddSeconds(curr.Second) - curr).TotalMilliseconds;
 
-           
+            #region Lamamda和Linq
+            var products = GetProductListData();
+            List<Product> take = products.Take(3).ToList();//顺序取3条记录
+            List<Product> takeWhile = products.TakeWhile(p => p.ID <= 1).ToList();//只要不满足条件了，返回所有当前记录
+            List<Product> skip = products.Skip(3).ToList();//顺序跳过3条记录
+            List<Product> skipWhile = products.SkipWhile(p => p.Price < 100000).ToList();//只要不满足条件了，返回所有剩余记录
+            foreach (var item in skip) {
+                Console.WriteLine(item.ToJsonString());
+            }
+            #endregion
+            Console.ReadLine();
+
         }
         #region 查询数据案例
         /// <summary>
@@ -123,7 +134,31 @@ namespace Super.SDK.ConsoleExe
             Console.WriteLine("LogTaskTwo Thread");
         }
         #endregion
+        #region 静态数据源
+        public class Product
+        {
+            public int ID { get; set; }
+            public string Name { get; set; }
+            public string Region { get; set; }
+            public decimal Price { get; set; }
+            public bool IsFavorite { get; set; }
+        }
 
-       
+        public static List<Product> GetProductListData() {
+            List<Product> products = new List<Product> {
+                new Product { ID=1, Name="路易十八比萨饼", Region="意大利", Price=79961, IsFavorite = false },
+                new Product { ID=2, Name="澳洲胡桃", Region="澳洲", Price=195, IsFavorite = false },
+                new Product { ID=3, Name="Almas鱼子酱", Region="伊朗", Price=129950, IsFavorite = true },
+                new Product { ID=4, Name="和牛肉", Region="日本", Price=3250, IsFavorite = true },
+                new Product { ID=5, Name="麝香猫咖啡豆", Region="印尼", Price=2000, IsFavorite = true },
+                new Product { ID=6, Name="大红袍茶叶", Region="中国", Price=208000, IsFavorite = true },
+                new Product { ID=7, Name="Kona Nigari矿泉水", Region="美国", Price=13000, IsFavorite = true },
+                new Product { ID=8, Name="Diva伏特加", Region="北欧", Price=6500, IsFavorite = false },
+                new Product { ID=9, Name="番红花的雄蕊", Region="地中海", Price=38986, IsFavorite = false },
+            };
+            return products;
+        }
+        #endregion
+
     }
 }
